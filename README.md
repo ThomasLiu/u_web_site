@@ -1,6 +1,6 @@
-# Ant Design Pro Site
+# U Web Site
 
-The documentation source of [Ant Design Pro](https://github.com/ThomasLiu/u_web).
+The documentation source of [U Web](https://github.com/ThomasLiu/u_web).
 
 ### Development
 

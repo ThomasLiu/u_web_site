@@ -276,7 +276,7 @@ class Header extends React.Component {
               <img src={LOGO_URL} alt="logo" />
               <img
                 src="https://gw.alipayobjects.com/zos/rmsportal/tNoOLUAkyuGLXoZvaibF.svg"
-                alt="Ant Design Pro"
+                alt="U Web"
               />
             </Link>
           </Col>
