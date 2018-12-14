@@ -3,7 +3,6 @@ const fs = require('fs');
 const syntax = require('postcss-less');
 
 const LocalIdentNameplugin = postcss.plugin('LocalIdentNameplugin', ({ localIdentName }) => {
-  console.log('LocalIdentNameplugin start');
   return lessAST => {
     // loop add localIdentName
     const loop = nodes => {
@@ -38,7 +37,6 @@ const LocalIdentNameplugin = postcss.plugin('LocalIdentNameplugin', ({ localIden
       });
     };
     loop(lessAST.nodes);
-    console.log('LocalIdentNameplugin end');
   };
 });
 
