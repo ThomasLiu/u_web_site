@@ -1,12 +1,12 @@
 {
-  "name": "u_web_site",
+  "name": "u_webant_site",
   "version": "1.0.0",
   "title": "U Web",
   "description": "site of U Web",
   "homepage": "http://pro.ant.design/",
   "repository": {
     "type": "git",
-    "url": "https://github.com/ThomasLiu/u_web_site"
+    "url": "https://github.com/ThomasLiu/u_webant_site"
   },
   "license": "MIT",
   "dependencies": {

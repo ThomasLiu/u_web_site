@@ -250,7 +250,7 @@ ${state.sourceCode.replace('mountNode', "document.getElementById('container')")}
             <EditButton
               title={<FormattedMessage id="app.content.edit-page" />}
               filename={meta.filename.replace('scaffold/', '')}
-              sourcePath="https://github.com/ThomasLiu/u_web/edit/master/"
+              sourcePath="https://github.com/ThomasLiu/u_webant/edit/master/"
             />
           </div>
           {introChildren}

@@ -7,7 +7,7 @@ const deepAssign = require('deep-assign');
 const config = getWebpackConfig(false);
 
 const cwd = process.cwd();
-const filename = 'u_web';
+const filename = 'u_webant';
 
 const webpackConfig = config[0];
 
@@ -48,7 +48,7 @@ webpackConfig.module.rules.forEach(function(rule, index) {
                 .map(a => a.replace(/([A-Z])/g, '-$1'))
                 .map(a => a.toLowerCase());
               arr.pop();
-              return `antd-pro${arr.join('-')}-${localName}`.replace('--', '-');
+              return `u_webant${arr.join('-')}-${localName}`.replace('--', '-');
             },
           },
         },

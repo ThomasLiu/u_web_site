@@ -24,7 +24,7 @@ function Page2() {
             </p>
             <div key="code1" className="home-code">
               <div>
-                $ <span>git clone</span> git@github.com:ThomasLiu/u_web.git --depth=1
+                $ <span>git clone</span> git@github.com:ThomasLiu/u_webant.git --depth=1
               </div>
               <div>$ cd ant-design-pro</div>
               <div>$ npm install</div>
@@ -50,7 +50,7 @@ function Page2() {
                     </Link>
                   ),
                   ask: (
-                    <a href="https://github.com/ThomasLiu/u_web/issues">
+                    <a href="https://github.com/ThomasLiu/u_webant/issues">
                       <FormattedMessage id="app.home.ask" />
                     </a>
                   ),
@@ -59,7 +59,7 @@ function Page2() {
             </p>
             <div key="button" style={{ marginTop: 88 }}>
               <a
-                href="http://github.com/ThomasLiu/u_web"
+                href="http://github.com/ThomasLiu/u_webant"
                 target="_blank"
                 rel="noopener noreferrer"
               >

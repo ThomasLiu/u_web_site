@@ -81,7 +81,7 @@ module.exports = {
     'app.publish.greeting': '你好，',
     'app.publish.intro': ' 已正式发布',
     'app.publish.tips': '，欢迎升级和体验。',
-    'app.publish.url': 'https://www.yuque.com/ThomasLiu/u_web/gg1e9a',
+    'app.publish.url': 'https://www.yuque.com/ThomasLiu/u_webant/gg1e9a',
     'app.publish.old-version-guide': '如果您还需要使用旧版，请查阅 ',
     'app.publish.old-version-tips': '，也可通过点击页面右上角的 v1 菜单查看。',
   },

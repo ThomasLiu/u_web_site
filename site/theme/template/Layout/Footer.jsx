@@ -156,7 +156,7 @@ class Footer extends React.Component {
                   <FormattedMessage id="app.footer.help" />
                 </h2>
                 <div>
-                  <a target="_blank " href="https://github.com/ThomasLiu/u_web">
+                  <a target="_blank " href="https://github.com/ThomasLiu/u_webant">
                     GitHub
                   </a>
                 </div>
@@ -178,7 +178,7 @@ class Footer extends React.Component {
                   <a
                     target="_blank"
                     rel="noopener noreferrer"
-                    href="https://gitter.im/ThomasLiu/u_web"
+                    href="https://gitter.im/ThomasLiu/u_webant"
                   >
                     <FormattedMessage id="app.footer.discuss-cn" />
                   </a>

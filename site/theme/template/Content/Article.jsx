@@ -92,7 +92,7 @@ export default class Article extends React.PureComponent {
               message={
                 <span>
                   This article has not been translated yet. Wan&apos;t to help us out?{' '}
-                  <a href="https://github.com/ThomasLiu/u_web/issues/120">
+                  <a href="https://github.com/ThomasLiu/u_webant/issues/120">
                     See this issue on GitHub.
                   </a>
                 </span>

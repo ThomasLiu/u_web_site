@@ -9,18 +9,22 @@ const pathTool = require('path');
 const less2css = require('./less2css');
 
 const appentContent = (path, content) => {
+  console.log('appentContent start');
   let lessContent = '';
   if (fs.existsSync(path)) {
     lessContent = fs.readFileSync(path);
   }
   lessContent += `${content}\n`;
   fs.writeFileSync(path, lessContent);
+  console.log('appentContent end');
 };
 
 const createStyleFolder = function(parents) {
+  console.log('createStyleFolder start');
   const paths = fs.readdirSync(pathTool.join(__dirname, parents));
   paths.forEach(path => {
     if (path === '_utils' || path === 'style') {
+      console.log('createStyleFolder end');
       return;
     }
     const filePath = pathTool.join(__dirname, parents, path);
@@ -43,6 +47,7 @@ const createStyleFolder = function(parents) {
     }
     if (fileStatus.isDirectory()) {
       if (path === 'style') {
+        console.log('createStyleFolder end');
         return;
       }
       createStyleFolder(pathTool.join(parents, path));

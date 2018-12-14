@@ -5,5 +5,5 @@ module.exports = function(localName, path) {
     .map(a => a.replace(/([A-Z])/g, '-$1'))
     .map(a => a.toLowerCase());
   arr.pop();
-  return `u_web${arr.join('-')}-${localName}`.replace('--', '-');
+  return `u_webant${arr.join('-')}-${localName}`.replace('--', '-');
 };

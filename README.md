@@ -1,12 +1,12 @@
 # U Web Site
 
-The documentation source of [U Web](https://github.com/ThomasLiu/u_web).
+The documentation source of [U Web](https://github.com/ThomasLiu/u_webant).
 
 ### Development
 
 ```bash
-$ git clone git@github.com:ThomasLiu/u_web_site.git
-$ cd u_web_site
+$ git clone git@github.com:ThomasLiu/u_webant_site.git
+$ cd u_webant_site
 $ git submodule init
 $ git submodule update --recursive
 $ npm install

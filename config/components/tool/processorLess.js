@@ -12,6 +12,7 @@ const replacedefaultLess = require('./replacedefaultLess');
 
 // read less file list
 const lessArray = ['@import "./style/themes/default.less";'];
+console.log('processorLess start');
 // copy antd themes to lib
 copyAntdthemes();
 
@@ -24,3 +25,4 @@ glob.sync('../**/**.less', { ignore: '../**/node_modules/**' }).forEach(lessPath
   lessArray.push(fileContent.replace('@import "../../style/themes/default.less";', ''));
   AddlocalIdentName(relaPath, fileContent, getLocalIdentName(relaPath));
 });
+console.log('processorLess end');
