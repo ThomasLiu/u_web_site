@@ -13,11 +13,10 @@ createStyleFolder('../lib');
 // 之所以是个对象是为了去重
 const antdLibMap = {};
 
-const addAntlibtoStyle = function (parentsFolder) {
-  const ChartsMap = {};
-  const loop = (parents) => {
+const addAntlibtoStyle = function(parentsFolder) {
+  const loop = parents => {
     const paths = fs.readdirSync(pathTool.join(__dirname, parents));
-    paths.forEach((path) => {
+    paths.forEach(path => {
       if (path === '_utils') {
         return;
       }
@@ -29,17 +28,10 @@ const addAntlibtoStyle = function (parentsFolder) {
         if (!execArray) {
           return;
         }
-        if (relaPath.includes('Charts')) {
-          execArray.forEach((antdLib) => {
-            antdLibMap[antdLib] = true;
-            ChartsMap[antdLib] = true;
-          });
-          return;
-        }
         const cssPathString = [];
         const lessPathString = [];
 
-        execArray.forEach((antdLib) => {
+        execArray.forEach(antdLib => {
           antdLibMap[antdLib] = true;
           cssPathString.push(`require('${antdLib}/style/css');`);
           lessPathString.push(`require('${antdLib}/style/index');`);
@@ -65,20 +57,6 @@ const addAntlibtoStyle = function (parentsFolder) {
     });
   };
   loop(parentsFolder);
-
-  const cssPathString = [];
-  const lessPathString = [];
-  Object.keys(ChartsMap).forEach((antdLib) => {
-    cssPathString.push(`require('${antdLib}/style/css');`);
-    lessPathString.push(`require('${antdLib}/style/index');`);
-  });
-  // appent to css.js
-  const cssJsPath = pathTool.join(__dirname, '../lib/Charts', 'style/css.js');
-  appentContent(cssJsPath, cssPathString.join('\n'));
-
-  // appent to index.js
-  const lessJsPath = pathTool.join(__dirname, '../lib/Charts', 'style/index.js');
-  appentContent(lessJsPath, lessPathString.join('\n'));
 };
 
 addAntlibtoStyle('../lib');

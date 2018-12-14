@@ -7,15 +7,14 @@ const cwd = process.cwd();
 
 /* eslint prefer-arrow-callback:0 */
 /* eslint no-console:0 */
-module.exports = function () {
-  const scaffoldDir = path.join(cwd, './dist');
+module.exports = function() {
+  const scaffoldDir = path.join(cwd, './app/public');
   const siteDir = path.join(cwd, '../_scaffold_site');
   const utilsDir = `${cwd}/src/utils`;
 
-  process.on('exit', function () {
-  });
+  process.on('exit', function() {});
 
-  process.on('SIGINT', function () {
+  process.on('SIGINT', function() {
     fs.copySync(`${utilsDir}/request-temp.js`, `${utilsDir}/request.js`);
     fs.removeSync(`${utilsDir}/request-temp.js`);
     fs.removeSync(`${cwd}/src/.roadhogrc.mock.js`);
@@ -27,7 +26,7 @@ module.exports = function () {
     process.exit(0);
   });
 
-  shelljs.exec('roadhog-api-doc build', function (code, stdout, stderr) {
+  shelljs.exec('roadhog-api-doc build', function(code, stdout, stderr) {
     try {
       // clean
       fs.copySync(`${utilsDir}/request-temp.js`, `${utilsDir}/request.js`);
@@ -53,4 +52,3 @@ module.exports = function () {
     }
   });
 };
-

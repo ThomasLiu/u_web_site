@@ -26,14 +26,23 @@ const execPromise = util.promisify(require('child_process').exec);
 function runCmd() {
   const success = color(2);
   const fail = color(1);
-  const installCommands = ['tnpm install', 'cnpm install', 'yarn install', 'npm install'];
+  const installCommands = ['npm install', 'yarn install', 'tnpm install', 'cnpm install' ];
   console.log(success, messages.submodule_deps_install);
   execPromise(installCommands[0])
-    .catch(() => execPromise(installCommands[1]))
-    .catch(() => execPromise(installCommands[2]))
-    .catch(() => execPromise(installCommands[3]))
     .then(() => {
       console.log(success, messages.submodule_deps_install_success);
+    })
+    .catch(() => {
+      console.log(fail, `${installCommands[0]} error catch, then try ${installCommands[1]}`);
+      execPromise(installCommands[1])
+    })
+    .catch(() => {
+      console.log(fail, `${installCommands[1]} error catch, then try ${installCommands[2]}`);
+      execPromise(installCommands[2])
+    })
+    .catch(() => {
+      console.log(fail, `${installCommands[2]} error catch, then try ${installCommands[3]}`);
+      execPromise(installCommands[3])
     })
     .catch(() => {
       console.log(fail, messages.submodule_deps_install_fail);

@@ -7,7 +7,7 @@ const deepAssign = require('deep-assign');
 const config = getWebpackConfig(false);
 
 const cwd = process.cwd();
-const filename = 'ant-design-pro';
+const filename = 'u_web';
 
 const webpackConfig = config[0];
 
@@ -40,8 +40,10 @@ webpackConfig.module.rules.forEach(function(rule, index) {
             modules: true,
             localIdentName: '[path]',
             getLocalIdent: (context, localIdentName, localName, options) => {
-              const antdProPath = context.resourcePath.match(/scaffold\/src\/components\/(.*)/)[1];
-              const arr = antdProPath
+              const uWebPath = context.resourcePath.match(
+                /scaffold\/app\/web\/src\/components\/(.*)/
+              )[1];
+              const arr = uWebPath
                 .split('/')
                 .map(a => a.replace(/([A-Z])/g, '-$1'))
                 .map(a => a.toLowerCase());

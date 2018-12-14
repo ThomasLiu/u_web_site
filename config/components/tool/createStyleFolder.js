@@ -7,9 +7,6 @@
 const fs = require('fs-extra');
 const pathTool = require('path');
 const less2css = require('./less2css');
-const megreChartsList = require('./megreChartsList');
-
-megreChartsList();
 
 const appentContent = (path, content) => {
   let lessContent = '';
@@ -20,9 +17,9 @@ const appentContent = (path, content) => {
   fs.writeFileSync(path, lessContent);
 };
 
-const createStyleFolder = function (parents) {
+const createStyleFolder = function(parents) {
   const paths = fs.readdirSync(pathTool.join(__dirname, parents));
-  paths.forEach((path) => {
+  paths.forEach(path => {
     if (path === '_utils' || path === 'style') {
       return;
     }
