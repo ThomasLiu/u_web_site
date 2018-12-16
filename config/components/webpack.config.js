@@ -40,9 +40,7 @@ webpackConfig.module.rules.forEach(function(rule, index) {
             modules: true,
             localIdentName: '[path]',
             getLocalIdent: (context, localIdentName, localName, options) => {
-              const uWebPath = context.resourcePath.match(
-                /scaffold\/app\/web\/src\/components\/(.*)/
-              )[1];
+              const uWebPath = context.resourcePath.match(/scaffold\/src\/components\/(.*)/)[1];
               const arr = uWebPath
                 .split('/')
                 .map(a => a.replace(/([A-Z])/g, '-$1'))

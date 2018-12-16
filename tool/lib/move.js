@@ -4,7 +4,7 @@ const fs = require('fs-extra');
 const cwd = process.cwd();
 
 module.exports = function() {
-  const scaffoldDir = path.join(cwd, './scaffold/app/public');
+  const scaffoldDir = path.join(cwd, './scaffold/dist');
   const siteDir = path.join(cwd, './_site');
 
   // change name

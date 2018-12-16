@@ -1,5 +1,5 @@
 module.exports = function(localName, path) {
-  const uWebPath = path.match(/scaffold\/app\/web\/src\/components\/(.*)/)[1];
+  const uWebPath = path.match(/scaffold\/src\/components\/(.*)/)[1];
   const arr = uWebPath
     .split('/')
     .map(a => a.replace(/([A-Z])/g, '-$1'))

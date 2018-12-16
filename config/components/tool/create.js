@@ -13,7 +13,7 @@ components = components.filter(component => {
 });
 components.forEach(component => {
   indexContent += `export { default as ${component} } from './${component}';\n`;
-  umdContent += `import ${component} from '../../scaffold/app/web/src/components/${component}';\n`;
+  umdContent += `import ${component} from '../../scaffold/src/components/${component}';\n`;
 });
 
 umdContent += '\nexport default {\n';

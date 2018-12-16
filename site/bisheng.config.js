@@ -22,7 +22,7 @@ module.exports = {
   port: 8001,
   root: '/',
   source: {
-    components: './scaffold/app/web/src/components',
+    components: './scaffold/src/components',
     docs: './docs',
   },
   theme: './site/theme',

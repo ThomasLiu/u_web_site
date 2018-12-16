@@ -3,7 +3,7 @@ const fs = require('fs-extra');
 const cwd = process.cwd();
 
 module.exports = function() {
-  const utilsDir = `${cwd}/scaffold/app/web/src/utils`;
+  const utilsDir = `${cwd}/scaffold/src/utils`;
   const tpl = `import query from '../.roadhogrc.mock.js';
 
 export default function request(url, params) {

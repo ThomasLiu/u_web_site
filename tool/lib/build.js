@@ -8,7 +8,7 @@ const cwd = process.cwd();
 /* eslint prefer-arrow-callback:0 */
 /* eslint no-console:0 */
 module.exports = function() {
-  const scaffoldDir = path.join(cwd, './app/public');
+  const scaffoldDir = path.join(cwd, './dist');
   const siteDir = path.join(cwd, '../_scaffold_site');
   const utilsDir = `${cwd}/src/utils`;
 
