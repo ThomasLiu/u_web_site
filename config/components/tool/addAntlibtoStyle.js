@@ -8,6 +8,8 @@ const fs = require('fs');
 const pathTool = require('path');
 const { createStyleFolder, appentContent } = require('./createStyleFolder');
 
+// const components = require('../components.config.js');
+
 createStyleFolder('../lib');
 // 所有使用过的 ant 组件
 // 之所以是个对象是为了去重
@@ -24,18 +26,31 @@ const addAntlibtoStyle = function(parentsFolder) {
       if (fileStatus.isFile() && path.indexOf('.js') > -1) {
         const relaPath = pathTool.join(__dirname, parents, path);
         const jsString = fs.readFileSync(relaPath).toString();
+
+        const localExecArray = jsString.match(/(\.\.\/)(\w*((-)*\w+)*)/gi);
         const execArray = jsString.match(/(antd\/lib\/)(\w*((-)*\w+)*)/gi);
-        if (!execArray) {
+        if (!execArray && !localExecArray) {
           return;
         }
         const cssPathString = [];
         const lessPathString = [];
 
-        execArray.forEach(antdLib => {
-          antdLibMap[antdLib] = true;
-          cssPathString.push(`require('${antdLib}/style/css');`);
-          lessPathString.push(`require('${antdLib}/style/index');`);
-        });
+        if (execArray) {
+          execArray.forEach(antdLib => {
+            antdLibMap[antdLib] = true;
+            cssPathString.push(`require('${antdLib}/style/css');`);
+            lessPathString.push(`require('${antdLib}/style/index');`);
+          });
+        }
+        if (localExecArray) {
+          localExecArray.forEach(localLib => {
+            if (localLib !== '../_utils') {
+              cssPathString.push(`require('../${localLib}/style/css');`);
+              lessPathString.push(`require('../${localLib}/style/index');`);
+            }
+          });
+        }
+
         const stylePath = pathTool.join(__dirname, parents, 'style');
         if (stylePath.includes('style/style')) {
           return false;

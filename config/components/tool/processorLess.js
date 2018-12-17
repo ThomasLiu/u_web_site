@@ -18,9 +18,11 @@ copyAntdthemes();
 // 寻找所有的 less 文件
 glob.sync('../**/**.less', { ignore: '../**/node_modules/**' }).forEach(lessPath => {
   const relaPath = path.join(__dirname, '../', lessPath);
+
   // post css add localIdentNameplugin
   const fileContent = replacedefaultLess(relaPath);
   // push less file
   lessArray.push(fileContent.replace('@import "../../style/themes/default.less";', ''));
+
   AddlocalIdentName(relaPath, fileContent, getLocalIdentName(relaPath));
 });

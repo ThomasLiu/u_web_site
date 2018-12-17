@@ -45,7 +45,7 @@ export default function request(url, params) {
 options:
   branch: 'site'
   dist: '_scaffold_site'
-cname: 'antd-pro.alibaba.net'
+cname: 'u_webant.alibaba.net'
 `;
 
   try {
