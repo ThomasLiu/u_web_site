@@ -47,7 +47,7 @@ const addAntlibtoStyle = function(parentsFolder) {
         }
         if (localExecArray) {
           localExecArray.forEach(localLib => {
-            if (localLib !== '../_utils') {
+            if (localLib !== '../_utils' && localLib !== '../Script') {
               cssPathString.push(`require('../${localLib}/style/css');`);
               lessPathString.push(`require('../${localLib}/style/index');`);
               let arr = needToFixLibMap[parents];
