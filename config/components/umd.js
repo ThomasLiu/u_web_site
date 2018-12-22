@@ -9,6 +9,7 @@ import Exception from '../../scaffold/src/components/Exception';
 import GlobalFooter from '../../scaffold/src/components/GlobalFooter';
 import GlobalHeader from '../../scaffold/src/components/GlobalHeader';
 import HeaderSearch from '../../scaffold/src/components/HeaderSearch';
+import HeaderDropdown from '../../scaffold/src/components/HeaderDropdown';
 import MobileCaptcha from '../../scaffold/src/components/MobileCaptcha';
 import NoticeIcon from '../../scaffold/src/components/NoticeIcon';
 import PageLoading from '../../scaffold/src/components/PageLoading';
@@ -29,6 +30,7 @@ export default {
   GlobalFooter,
   GlobalHeader,
   HeaderSearch,
+  HeaderDropdown,
   MobileCaptcha,
   NoticeIcon,
   PageLoading,

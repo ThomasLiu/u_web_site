@@ -8,7 +8,7 @@ module.exports = [
   'GlobalFooter',
   'GlobalHeader',
   'HeaderSearch',
-  // 'MainMenu',
+  'HeaderDropdown',
   'MobileCaptcha',
   'NoticeIcon',
   'PageLoading',

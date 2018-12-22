@@ -84,7 +84,7 @@ const addAntlibtoStyle = function(parentsFolder) {
     });
   };
 
-  const fix = fixMap => {
+  const fixComponents = fixMap => {
     Object.keys(fixMap).forEach(parents => {
       const arr = fixMap[parents];
       const cssJsPath = pathTool.join(__dirname, parents.replace('/style', ''), 'style/css.js');
@@ -106,11 +106,11 @@ const addAntlibtoStyle = function(parentsFolder) {
           const cssPathString = [];
           const lessPathString = [];
 
-          const execArray = willAppentContentJsCssString.match(/(antd\/lib\/)(\w*((-)*\w+)*)/gi);
+          let execArray = willAppentContentJsCssString.match(/(antd\/lib\/)(\w*((-)*\w+)*)/gi);
           if (execArray) {
             const hadArray = cssJsString.match(/(antd\/lib\/)(\w*((-)*\w+)*)/gi);
             if (hadArray) {
-              execArray.filter(item => hadArray.includes(item));
+              execArray = execArray.filter(item => hadArray.includes(item));
             }
             if (execArray.length > 0) {
               execArray.forEach(antdLib => {
@@ -125,8 +125,52 @@ const addAntlibtoStyle = function(parentsFolder) {
       });
     });
   };
+  const fix = parents => {
+    const paths = fs.readdirSync(pathTool.join(__dirname, parents));
+    paths.forEach(path => {
+      if (path === '_utils') {
+        return;
+      }
+      const fileStatus = fs.lstatSync(pathTool.join(__dirname, parents, path));
+      if (!fileStatus.isFile() && path.indexOf('.js') === -1) {
+        const cssJsPath = pathTool.join(__dirname, `../lib/${path}`, 'style/css.js');
+        const lessJsPath = pathTool.join(__dirname, `../lib/${path}`, 'style/index.js');
+        console.log(`path: ${path}`);
+        console.log(`cssJsPath: ${cssJsPath}`);
+        console.log(`lessJsPath: ${lessJsPath}`);
+
+        const cssPathString = [];
+        const lessPathString = [];
+        if (fs.existsSync(cssJsPath)) {
+          const cssJsPathString = fs.readFileSync(cssJsPath).toString();
+          let antArray = cssJsPathString.match(/(antd\/lib\/)(\w*((-)*\w+)*)/gi) || [];
+          let localExecArray = cssJsPathString.match(/(\.\.\/\.\.\/)(\w*((-)*\w+)*)/gi) || [];
+          if (antArray.length > 1) {
+            antArray = antArray.filter((item, i, self) => self.indexOf(item) === i);
+          }
+          if (localExecArray.length > 1) {
+            localExecArray = localExecArray.filter((item, i, self) => self.indexOf(item) === i);
+          }
+
+          [...antArray, ...localExecArray].forEach(lib => {
+            cssPathString.push(`require('${lib}/style/css');`);
+            lessPathString.push(`require('${lib}/style/index');`);
+          });
+          if (cssJsPathString.indexOf('./index.css') > 0) {
+            cssPathString.push(`require('./index.css');`);
+            lessPathString.push(`require('./index.less');`);
+          }
+
+          fs.writeFileSync(cssJsPath, cssPathString.join('\n'));
+          fs.writeFileSync(lessJsPath, lessPathString.join('\n'));
+        }
+      }
+    });
+  };
+
   loop(parentsFolder);
-  fix(needToFixLibMap);
+  fixComponents(needToFixLibMap);
+  fix(parentsFolder);
 };
 
 addAntlibtoStyle('../lib');
