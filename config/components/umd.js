@@ -10,15 +10,18 @@ import GlobalFooter from '../../scaffold/src/components/GlobalFooter';
 import GlobalHeader from '../../scaffold/src/components/GlobalHeader';
 import HeaderSearch from '../../scaffold/src/components/HeaderSearch';
 import HeaderDropdown from '../../scaffold/src/components/HeaderDropdown';
+import LayoutBase from '../../scaffold/src/components/LayoutBase';
+import LayoutFooter from '../../scaffold/src/components/LayoutFooter';
+import LayoutHeader from '../../scaffold/src/components/LayoutHeader';
 import MobileCaptcha from '../../scaffold/src/components/MobileCaptcha';
 import NoticeIcon from '../../scaffold/src/components/NoticeIcon';
 import PageLoading from '../../scaffold/src/components/PageLoading';
 import Script from '../../scaffold/src/components/Script';
 import SelectLang from '../../scaffold/src/components/SelectLang';
+import ShareAppMessage from '../../scaffold/src/components/ShareAppMessage';
 import SiderMenu from '../../scaffold/src/components/SiderMenu';
 import Support from '../../scaffold/src/components/Support';
 import TopNavHeader from '../../scaffold/src/components/TopNavHeader';
-import ShareAppMessage from '../../scaffold/src/components/ShareAppMessage';
 
 export default {
   App,
@@ -31,13 +34,16 @@ export default {
   GlobalHeader,
   HeaderSearch,
   HeaderDropdown,
+  LayoutBase,
+  LayoutFooter,
+  LayoutHeader,
   MobileCaptcha,
   NoticeIcon,
   PageLoading,
   Script,
   SelectLang,
+  ShareAppMessage,
   SiderMenu,
   Support,
   TopNavHeader,
-  ShareAppMessage,
 };

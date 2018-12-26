@@ -135,9 +135,6 @@ const addAntlibtoStyle = function(parentsFolder) {
       if (!fileStatus.isFile() && path.indexOf('.js') === -1) {
         const cssJsPath = pathTool.join(__dirname, `../lib/${path}`, 'style/css.js');
         const lessJsPath = pathTool.join(__dirname, `../lib/${path}`, 'style/index.js');
-        console.log(`path: ${path}`);
-        console.log(`cssJsPath: ${cssJsPath}`);
-        console.log(`lessJsPath: ${lessJsPath}`);
 
         const cssPathString = [];
         const lessPathString = [];
