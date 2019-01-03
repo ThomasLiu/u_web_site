@@ -2,10 +2,12 @@
 
 export { default as App } from './App';
 export { default as Authorized } from './Authorized';
+export { default as BaseForm } from './BaseForm';
 export { default as Cropper } from './Cropper';
 export { default as EditableInput } from './EditableInput';
 export { default as EmailCaptcha } from './EmailCaptcha';
 export { default as Exception } from './Exception';
+export { default as FormModal } from './FormModal';
 export { default as GlobalFooter } from './GlobalFooter';
 export { default as GlobalHeader } from './GlobalHeader';
 export { default as HeaderSearch } from './HeaderSearch';
@@ -17,6 +19,7 @@ export { default as MobileCaptcha } from './MobileCaptcha';
 export { default as NoticeIcon } from './NoticeIcon';
 export { default as PageLoading } from './PageLoading';
 export { default as Script } from './Script';
+export { default as SelectHiddenOptions } from './SelectHiddenOptions';
 export { default as SelectLang } from './SelectLang';
 export { default as ShareAppMessage } from './ShareAppMessage';
 export { default as SiderMenu } from './SiderMenu';

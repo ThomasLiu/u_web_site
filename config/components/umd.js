@@ -2,10 +2,12 @@
 
 import App from '../../scaffold/src/components/App';
 import Authorized from '../../scaffold/src/components/Authorized';
+import BaseForm from '../../scaffold/src/components/BaseForm';
 import Cropper from '../../scaffold/src/components/Cropper';
 import EditableInput from '../../scaffold/src/components/EditableInput';
 import EmailCaptcha from '../../scaffold/src/components/EmailCaptcha';
 import Exception from '../../scaffold/src/components/Exception';
+import FormModal from '../../scaffold/src/components/FormModal';
 import GlobalFooter from '../../scaffold/src/components/GlobalFooter';
 import GlobalHeader from '../../scaffold/src/components/GlobalHeader';
 import HeaderSearch from '../../scaffold/src/components/HeaderSearch';
@@ -17,6 +19,7 @@ import MobileCaptcha from '../../scaffold/src/components/MobileCaptcha';
 import NoticeIcon from '../../scaffold/src/components/NoticeIcon';
 import PageLoading from '../../scaffold/src/components/PageLoading';
 import Script from '../../scaffold/src/components/Script';
+import SelectHiddenOptions from '../../scaffold/src/components/SelectHiddenOptions';
 import SelectLang from '../../scaffold/src/components/SelectLang';
 import ShareAppMessage from '../../scaffold/src/components/ShareAppMessage';
 import SiderMenu from '../../scaffold/src/components/SiderMenu';
@@ -26,10 +29,12 @@ import TopNavHeader from '../../scaffold/src/components/TopNavHeader';
 export default {
   App,
   Authorized,
+  BaseForm,
   Cropper,
   EditableInput,
   EmailCaptcha,
   Exception,
+  FormModal,
   GlobalFooter,
   GlobalHeader,
   HeaderSearch,
@@ -41,6 +46,7 @@ export default {
   NoticeIcon,
   PageLoading,
   Script,
+  SelectHiddenOptions,
   SelectLang,
   ShareAppMessage,
   SiderMenu,
