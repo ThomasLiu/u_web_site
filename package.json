@@ -104,7 +104,8 @@
     "lint:demo": "cross-env RUN_ENV=DEMO eslint ./ --ext '.md' -c ./.eslintrc.js",
     "test": "npm run lint",
     "lint-staged": "lint-staged",
-    "prettier": "prettier --write ./site/**/**/**"
+    "prettier": "prettier --write ./site/**/**/**",
+    "cp": "npm run components-publish"
   },
   "lint-staged": {
     "**/*.{js,jsx,less}": [
