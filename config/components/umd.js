@@ -4,7 +4,10 @@ import App from '../../scaffold/src/components/App';
 import Authorized from '../../scaffold/src/components/Authorized';
 import BaseForm from '../../scaffold/src/components/BaseForm';
 import Cropper from '../../scaffold/src/components/Cropper';
+import EditableDatePicker from '../../scaffold/src/components/EditableDatePicker';
 import EditableInput from '../../scaffold/src/components/EditableInput';
+import EditableSelect from '../../scaffold/src/components/EditableSelect';
+import EditableTextArea from '../../scaffold/src/components/EditableTextArea';
 import EmailCaptcha from '../../scaffold/src/components/EmailCaptcha';
 import Exception from '../../scaffold/src/components/Exception';
 import FormModal from '../../scaffold/src/components/FormModal';
@@ -31,7 +34,10 @@ export default {
   Authorized,
   BaseForm,
   Cropper,
+  EditableDatePicker,
   EditableInput,
+  EditableSelect,
+  EditableTextArea,
   EmailCaptcha,
   Exception,
   FormModal,
