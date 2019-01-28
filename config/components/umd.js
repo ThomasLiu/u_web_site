@@ -28,6 +28,7 @@ import ShareAppMessage from '../../scaffold/src/components/ShareAppMessage';
 import SiderMenu from '../../scaffold/src/components/SiderMenu';
 import Support from '../../scaffold/src/components/Support';
 import TopNavHeader from '../../scaffold/src/components/TopNavHeader';
+import Upload from '../../scaffold/src/components/Upload';
 
 export default {
   App,
@@ -58,4 +59,5 @@ export default {
   SiderMenu,
   Support,
   TopNavHeader,
+  Upload,
 };

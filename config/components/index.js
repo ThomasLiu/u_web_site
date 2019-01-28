@@ -28,3 +28,4 @@ export { default as ShareAppMessage } from './ShareAppMessage';
 export { default as SiderMenu } from './SiderMenu';
 export { default as Support } from './Support';
 export { default as TopNavHeader } from './TopNavHeader';
+export { default as Upload } from './Upload';

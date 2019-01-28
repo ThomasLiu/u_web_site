@@ -27,5 +27,6 @@ module.exports = [
   'SiderMenu',
   'Support',
   'TopNavHeader',
+  'Upload',
   '_utils',
 ];
